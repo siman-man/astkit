@@ -4,7 +4,7 @@ require 'astkit/node/fcall'
 require 'astkit/node/scope'
 require 'astkit/node/lit'
 require 'astkit/node/str'
-require 'astkit/node/array'
+require 'astkit/node/list'
 require 'astkit/node/zarray'
 require 'astkit/node/defn'
 require 'astkit/node/args'
@@ -116,7 +116,7 @@ class AbstractSyntaxTreeKit
       end
     when :FCALL
       walk(node.arguments, &block)
-    when :ARRAY
+    when :LIST
     when :ZARRAY
     when :LIT
     when :STR
@@ -137,8 +137,8 @@ class AbstractSyntaxTreeKit
         arguments: traverse(node.children[1]),
         body: body(node.children[2])
       )
-    when :ARRAY
-      Node::ARRAY.new(
+    when :LIST
+      Node::LIST.new(
         node: node,
         elements: elements(node)
       )

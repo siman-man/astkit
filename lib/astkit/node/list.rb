@@ -1,6 +1,6 @@
 class AbstractSyntaxTreeKit
   class Node
-    class ARRAY < Node
+    class LIST < Node
       attr_reader :elements
 
       def initialize(node:, elements:)

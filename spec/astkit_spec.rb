@@ -398,7 +398,7 @@ RSpec.describe AbstractSyntaxTreeKit, aggregate_failures: true do
       SRC
 
       result = AbstractSyntaxTreeKit.parse(src)
-      expect(result.body.type).to eq(:ARRAY)
+      expect(result.body.type).to eq(:LIST)
       expect(result.body.elements[0].value).to eq(1)
       expect(result.body.elements[1].value).to eq(2)
       expect(result.body.elements[2].value).to eq(3)
