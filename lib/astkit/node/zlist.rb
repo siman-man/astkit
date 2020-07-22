@@ -1,6 +1,6 @@
 class AbstractSyntaxTreeKit
   class Node
-    class ZARRAY < Node
+    class ZLIST < Node
       attr_reader :value
 
       def initialize(node:)

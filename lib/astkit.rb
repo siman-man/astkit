@@ -5,7 +5,7 @@ require 'astkit/node/scope'
 require 'astkit/node/lit'
 require 'astkit/node/str'
 require 'astkit/node/list'
-require 'astkit/node/zarray'
+require 'astkit/node/zlist'
 require 'astkit/node/defn'
 require 'astkit/node/args'
 require 'astkit/node/kw_arg'
@@ -117,7 +117,7 @@ class AbstractSyntaxTreeKit
     when :FCALL
       walk(node.arguments, &block)
     when :LIST
-    when :ZARRAY
+    when :ZLIST
     when :LIT
     when :STR
     when :ARGS
@@ -142,8 +142,8 @@ class AbstractSyntaxTreeKit
         node: node,
         elements: elements(node)
       )
-    when :ZARRAY
-      Node::ZARRAY.new(node: node)
+    when :ZLIST
+      Node::ZLIST.new(node: node)
     when :STR
       Node::STR.new(
         node: node,

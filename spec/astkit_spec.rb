@@ -410,7 +410,7 @@ RSpec.describe AbstractSyntaxTreeKit, aggregate_failures: true do
       SRC
 
       result = AbstractSyntaxTreeKit.parse(src)
-      expect(result.body.type).to eq(:ZARRAY)
+      expect(result.body.type).to eq(:ZLIST)
       expect(result.body.value).to eq([])
       expect(result.body.first_column).to eq(0)
       expect(result.body.first_lineno).to eq(1)
